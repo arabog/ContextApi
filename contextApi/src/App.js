@@ -12,7 +12,9 @@ export const WeatherContext = createContext(
 	{
 		cities: [],
 
-		addCity: (name, temperature) => {},
+		addCity: (name, temperature) => {
+			this.cities.push(name, temperature);
+		},
 	}
 )
 
@@ -24,20 +26,24 @@ function App() {
 	const addCity = (name, temperature) => {
 		// const newCity = {name, temperature};
 
-		setCities(prevCities => [...prevCities, {name, temperature}])
+		setCities(prevCities => [...prevCities, {name, temperature}]);
 	}
 
 	return (
 		<WeatherContext.Provider value={{cities, addCity}} >
 
-			<div className='city-overview' >
-				<h2> Multi-Weather App </h2>
+			<div className='container'>
 
-				<CityList />
+				<div className='city-overview' >
+					<h2> Multi-Weather App </h2>
 
-				<AddCityButton />
+					<CityList />
 
-				<TemperatureAve />				
+					<AddCityButton />
+
+					<TemperatureAve />				
+				</div>
+
 			</div>
 
 		</WeatherContext.Provider>

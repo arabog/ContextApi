@@ -23,7 +23,7 @@ const AddCityButton = () => {
                                         onChange={e => setName(e.target.value)}
                               />
 
-                              <button className='input' onClick={() => handleSubmit}>
+                              <button className='input' onClick={handleSubmit}>
                                         Add
                               </button>
                               
