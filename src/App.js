@@ -24,28 +24,19 @@ function App() {
 	const [cities, setCities] = useState([]);
 	
 	const addCity = (name, temperature) => {
-		// const newCity = {name, temperature};
-
 		setCities(prevCities => [...prevCities, {name, temperature}]);
 	}
 
 	return (
 		<WeatherContext.Provider value={{cities, addCity}} >
-
 			<div className='container'>
-
 				<div className='city-overview' >
 					<h2> Multi-Weather App </h2>
-
 					<CityList />
-
 					<AddCityButton />
-
 					<TemperatureAve />				
 				</div>
-
 			</div>
-
 		</WeatherContext.Provider>
 	);
 }
